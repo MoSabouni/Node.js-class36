@@ -9,12 +9,12 @@ app.get('/', (req, res) => {
   res.send('Hello from backend to front end');
 });
 
-app.post('/Weather', (req, res) => {
+app.post('/weather', (req, res) => {
   const cityName = req.body.cityName;
   if (!cityName) {
     return res.status(400).json({ msg: 'no city name was provided.' });
   }
-  return res.json(cityName);
+  return res.json({ cityName });
 });
 
 app.listen(port, () => {
